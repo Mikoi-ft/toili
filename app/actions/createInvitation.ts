@@ -7,7 +7,7 @@ import { createInvitation } from "@/lib/invitation/repository";
 export async function createInvitationAction(locale: string, formData: FormData) {
   const parsed = invitationInputSchema.safeParse({
     locale,
-    templateId: "toi-classic",
+    templateId: formData.get("templateId"),
     coupleNames: formData.get("coupleNames"),
     eventDate: formData.get("eventDate"),
     eventTime: formData.get("eventTime"),
