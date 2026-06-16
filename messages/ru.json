@@ -1,20 +1,37 @@
 {
+  "common": { "create": "Создать", "save": "Сохранить", "back": "Назад", "loading": "Загрузка…" },
+  "nav": { "brand": "Тойли", "templates": "Шаблоны", "create": "Создать приглашение" },
   "home": { "title": "Тойли", "subtitle": "Приглашение за 5 минут", "create": "Создать приглашение" },
-  "gallery": { "title": "Шаблоны", "all": "Все", "kgCeremony": "КГ-обряды", "universal": "Универсальные" },
+  "gallery": { "title": "Выберите шаблон", "all": "Все", "kgCeremony": "Той и обряды", "universal": "Универсальные", "premium": "Премиум" },
+  "editor": {
+    "title": "Создать приглашение",
+    "names": "Имена / заголовок",
+    "date": "Дата",
+    "time": "Время",
+    "venue": "Место",
+    "address": "Адрес",
+    "mapUrl": "Ссылка 2ГИС (необязательно)",
+    "message": "Текст (необязательно)",
+    "photo": "Фото (необязательно)",
+    "uploading": "Загрузка…",
+    "submit": "Создать"
+  },
   "rsvp": {
     "title": "Подтвердите участие",
     "name": "Ваше имя",
     "coming": "Приду",
     "notComing": "Не приду",
-    "guests": "Количество гостей",
+    "guests": "Сколько гостей",
     "wish": "Пожелание (необязательно)",
     "submit": "Отправить ответ",
-    "thanks": "Рахмат! Ваш ответ записан."
+    "thanks": "Рахмат! Ваш ответ записан.",
+    "error": "Не удалось отправить. Попробуйте ещё раз."
   },
   "share": {
     "whatsapp": "WhatsApp",
     "telegram": "Telegram",
-    "copy": "Копировать ссылку"
+    "copy": "Копировать ссылку",
+    "inviteText": "Сиздерди тойго чакырабыз!"
   },
   "manage": {
     "title": "Ваше приглашение готово",
@@ -24,6 +41,17 @@
     "comingCount": "придут",
     "totalGuests": "всего гостей",
     "notComingCount": "не придут",
-    "noAnswers": "Пока нет ответов"
+    "noAnswers": "Пока нет ответов",
+    "willCome": "Придёт",
+    "willNotCome": "Не придёт"
+  },
+  "templates": {
+    "toiClassicLabel": "Той",
+    "nikeLabel": "Нике той",
+    "birthdayLabel": "Туулган күн",
+    "route": "Маршрут в 2ГИС",
+    "kyzUzatuuLabel": "Кыз узатуу",
+    "beshikLabel": "Бешик той",
+    "jubileeLabel": "Юбилей"
   }
 }

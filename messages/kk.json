@@ -1,20 +1,37 @@
 {
+  "common": { "create": "Жасау", "save": "Сақтау", "back": "Артқа", "loading": "Жүктелуде…" },
+  "nav": { "brand": "Тойли", "templates": "Үлгілер", "create": "Шақыру жасау" },
   "home": { "title": "Тойли", "subtitle": "Шақыру 5 минутта", "create": "Шақыру жасау" },
-  "gallery": { "title": "Үлгілер", "all": "Барлығы", "kgCeremony": "ҚЖ салты", "universal": "Универсалды" },
+  "gallery": { "title": "Үлгі таңдаңыз", "all": "Барлығы", "kgCeremony": "Той және рәсімдер", "universal": "Универсалды", "premium": "Премиум" },
+  "editor": {
+    "title": "Шақыру жасау",
+    "names": "Аттар / тақырып",
+    "date": "Күні",
+    "time": "Уақыты",
+    "venue": "Орын",
+    "address": "Мекенжай",
+    "mapUrl": "2ГИС сілтемесі (міндетті емес)",
+    "message": "Мәтін (міндетті емес)",
+    "photo": "Сурет (міндетті емес)",
+    "uploading": "Жүктелуде…",
+    "submit": "Жасау"
+  },
   "rsvp": {
     "title": "Қатысуыңызды растаңыз",
     "name": "Сіздің атыңыз",
-    "coming": "Барамын",
-    "notComing": "Бармаймын",
+    "coming": "Келемін",
+    "notComing": "Келмеймін",
     "guests": "Қонақтар саны",
     "wish": "Тілек (міндетті емес)",
     "submit": "Жауап жіберу",
-    "thanks": "Рахмет! Сіздің жауабыңыз жазылды."
+    "thanks": "Рахмет! Сіздің жауабыңыз жазылды.",
+    "error": "Жіберілмеді. Қайтадан көріңіз."
   },
   "share": {
     "whatsapp": "WhatsApp",
     "telegram": "Telegram",
-    "copy": "Сілтемені көшіру"
+    "copy": "Сілтемені көшіру",
+    "inviteText": "Сіздерді тойға шақырамыз!"
   },
   "manage": {
     "title": "Шақыруыңыз дайын",
@@ -24,6 +41,17 @@
     "comingCount": "келеді",
     "totalGuests": "барлық қонақ",
     "notComingCount": "келмейді",
-    "noAnswers": "Әзірше жауап жоқ"
+    "noAnswers": "Әзірше жауап жоқ",
+    "willCome": "Келеді",
+    "willNotCome": "Келмейді"
+  },
+  "templates": {
+    "toiClassicLabel": "Той",
+    "nikeLabel": "Нике той",
+    "birthdayLabel": "Туған күн",
+    "route": "2ГИС-пен бағыт",
+    "kyzUzatuuLabel": "Қыз ұзату",
+    "beshikLabel": "Бесік той",
+    "jubileeLabel": "Мерейтой"
   }
 }
