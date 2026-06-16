@@ -1,8 +1,9 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// NOTE: Prisma 7 uses provider = "prisma-client" (not "prisma-client-js")
-// and outputs the generated client to lib/generated/prisma by default.
+// NOTE: Prisma 6 with provider = "prisma-client" and an explicit custom
+// output path (lib/generated/prisma). The generated client is gitignored and
+// regenerated via the "postinstall": "prisma generate" script.
 // Import from "@/lib/generated/prisma" in application code (see lib/db.ts).
 
 generator client {
