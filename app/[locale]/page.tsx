@@ -7,7 +7,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-center gap-6 p-8 text-center">
       <h1 className="text-4xl font-bold">{t("title")}</h1>
       <p className="text-lg text-gray-600">{t("subtitle")}</p>
-      <Link href="create" className="rounded-lg bg-black px-6 py-3 text-white">
+      <Link href="templates" className="rounded-lg bg-black px-6 py-3 text-white">
         {t("create")}
       </Link>
     </main>
