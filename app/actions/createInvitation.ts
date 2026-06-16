@@ -23,5 +23,5 @@ export async function createInvitationAction(locale: string, formData: FormData)
   }
 
   const invitation = await createInvitation(parsed.data);
-  redirect(`/${locale}/i/${invitation.slug}`);
+  redirect(`/${locale}/i/${invitation.slug}/manage?key=${invitation.manageKey}`);
 }
