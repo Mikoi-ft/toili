@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// NOTE: Prisma 7 uses provider = "prisma-client" (not "prisma-client-js")
+// and outputs the generated client to lib/generated/prisma by default.
+// Import from "@/lib/generated/prisma" in application code (see lib/db.ts).
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Invitation {
+  id           String   @id @default(uuid())
+  slug         String   @unique
+  locale       String
+  templateId   String
+  coupleNames  String
+  eventDate    String
+  eventTime    String
+  venueName    String
+  venueAddress String
+  mapUrl       String?
+  message      String?
+  createdAt    DateTime @default(now())
+}
