@@ -4,7 +4,7 @@ import type { InvitationViewData } from "@/lib/templates/types";
 export function NikeOrnament({ data }: { data: InvitationViewData }) {
   return (
     <article className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center gap-6 bg-[#5c1a2b] px-6 py-16 text-center text-amber-50">
-      <div aria-hidden className="text-2xl tracking-[0.5em] text-amber-300">۞ ۞ ۞</div>
+      <div aria-hidden={true} className="text-2xl tracking-[0.5em] text-amber-300">۞ ۞ ۞</div>
       {data.photoUrl && (
         <img src={data.photoUrl} alt={data.coupleNames} className="h-40 w-40 rounded-full border-2 border-amber-300 object-cover" />
       )}

@@ -36,8 +36,8 @@ export function InvitationEditor({ locale, templateId }: { locale: Locale; templ
         <button type="submit" className="rounded-lg bg-black px-6 py-3 text-white">Создать</button>
       </form>
 
-      <div className="overflow-hidden rounded-2xl border">
-        <div className="origin-top scale-[0.7]">
+      <div className="h-[600px] overflow-hidden rounded-2xl border md:sticky md:top-6">
+        <div className="w-[142.857%] origin-top-left scale-[0.7]">
           {Preview && (
             <Preview
               data={{
