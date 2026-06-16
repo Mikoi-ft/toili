@@ -15,6 +15,7 @@ export async function createInvitationAction(locale: string, formData: FormData)
     venueAddress: formData.get("venueAddress"),
     mapUrl: (formData.get("mapUrl") as string) || undefined,
     message: (formData.get("message") as string) || undefined,
+    photoUrl: (formData.get("photoUrl") as string) || undefined,
   });
 
   if (!parsed.success) {

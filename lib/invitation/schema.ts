@@ -11,6 +11,7 @@ export const invitationInputSchema = z.object({
   venueAddress: z.string().min(1).max(240),
   mapUrl: z.string().url().optional(),
   message: z.string().max(600).optional(),
+  photoUrl: z.string().url().optional(),
 });
 
 export type InvitationInput = z.infer<typeof invitationInputSchema>;

@@ -29,5 +29,6 @@ model Invitation {
   venueAddress String
   mapUrl       String?
   message      String?
+  photoUrl     String?
   createdAt    DateTime @default(now())
 }
