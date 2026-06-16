@@ -1,14 +1,15 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// NOTE: Prisma 6 with provider = "prisma-client" and an explicit custom
-// output path (lib/generated/prisma). The generated client is gitignored and
-// regenerated via the "postinstall": "prisma generate" script.
-// Import from "@/lib/generated/prisma" in application code (see lib/db.ts).
+// Default Prisma client generator (prisma-client-js) → outputs to
+// node_modules/.prisma/client. This is the location Vercel automatically
+// bundles the query-engine binary for, avoiding "Query Engine not found" on
+// serverless. binaryTargets pins the Vercel runtime (rhel-openssl-3.0.x)
+// alongside the local platform. Regenerated via "postinstall": "prisma generate".
 
 generator client {
-  provider = "prisma-client"
-  output   = "../lib/generated/prisma"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
 }
 
 datasource db {
