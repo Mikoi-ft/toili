@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { formatEventDate } from "@/lib/invitation/format";
 import type { InvitationViewData } from "@/lib/templates/types";
@@ -8,7 +9,7 @@ export function NikeOrnament({ data }: { data: InvitationViewData }) {
     <article className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center gap-6 bg-[#5c1a2b] px-6 py-16 text-center text-amber-50">
       <div aria-hidden={true} className="text-2xl tracking-[0.5em] text-amber-300">۞ ۞ ۞</div>
       {data.photoUrl && (
-        <img src={data.photoUrl} alt={data.coupleNames} className="h-40 w-40 rounded-full border-2 border-amber-300 object-cover" />
+        <Image src={data.photoUrl} alt={data.coupleNames} width={160} height={160} className="rounded-full border-2 border-amber-300 object-cover" />
       )}
       <p className="text-sm tracking-[0.3em] text-amber-300 uppercase">{t("nikeLabel")}</p>
       <h1 className="font-serif text-4xl">{data.coupleNames}</h1>

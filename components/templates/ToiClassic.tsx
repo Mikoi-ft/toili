@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { formatEventDate } from "@/lib/invitation/format";
 import type { InvitationViewData } from "@/lib/templates/types";
@@ -8,10 +9,12 @@ export function ToiClassic({ data }: { data: InvitationViewData }) {
     <article className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center gap-6 bg-gradient-to-b from-amber-50 to-rose-50 px-6 py-16 text-center">
       <p className="text-sm tracking-[0.3em] text-amber-700 uppercase">{t("toiClassicLabel")}</p>
       {data.photoUrl && (
-        <img
+        <Image
           src={data.photoUrl}
           alt={data.coupleNames}
-          className="h-40 w-40 rounded-full object-cover shadow-md"
+          width={160}
+          height={160}
+          className="rounded-full object-cover shadow-md"
         />
       )}
       <h1 className="font-serif text-4xl text-gray-900">{data.coupleNames}</h1>

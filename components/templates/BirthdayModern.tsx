@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { formatEventDate } from "@/lib/invitation/format";
 import type { InvitationViewData } from "@/lib/templates/types";
@@ -7,7 +8,7 @@ export function BirthdayModern({ data }: { data: InvitationViewData }) {
   return (
     <article className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center gap-6 bg-gradient-to-br from-sky-100 via-white to-fuchsia-100 px-6 py-16 text-center text-slate-900">
       {data.photoUrl && (
-        <img src={data.photoUrl} alt={data.coupleNames} className="h-44 w-44 rounded-3xl object-cover shadow-lg" />
+        <Image src={data.photoUrl} alt={data.coupleNames} width={176} height={176} className="rounded-3xl object-cover shadow-lg" />
       )}
       <p className="text-sm font-bold tracking-widest text-fuchsia-600 uppercase">🎉 {t("birthdayLabel")}</p>
       <h1 className="text-4xl font-extrabold">{data.coupleNames}</h1>

@@ -13,5 +13,6 @@ export function formatEventDate(isoDate: string, locale: Locale): string {
     day: "numeric",
     month: "long",
     year: "numeric",
+    timeZone: "UTC",
   }).format(date);
 }

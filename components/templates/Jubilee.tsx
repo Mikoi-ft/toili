@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { formatEventDate } from "@/lib/invitation/format";
 import type { InvitationViewData } from "@/lib/templates/types";
@@ -9,14 +10,13 @@ export function Jubilee({ data }: { data: InvitationViewData }) {
       <div aria-hidden={true} className="text-2xl tracking-[0.5em] text-yellow-500">✦ ✦ ✦</div>
       <p className="text-sm tracking-[0.4em] text-yellow-500 uppercase">{t("jubileeLabel")}</p>
       {data.photoUrl && (
-        <div className="relative h-40 w-40 overflow-hidden rounded-full border-2 border-yellow-500 shadow-md">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={data.photoUrl}
-            alt={data.coupleNames}
-            className="h-full w-full object-cover"
-          />
-        </div>
+        <Image
+          src={data.photoUrl}
+          alt={data.coupleNames}
+          width={160}
+          height={160}
+          className="rounded-full border-2 border-yellow-500 object-cover shadow-md"
+        />
       )}
       <h1 className="font-serif text-4xl text-yellow-300">{data.coupleNames}</h1>
       {data.message && <p className="text-amber-100/80">{data.message}</p>}

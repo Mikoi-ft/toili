@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { formatEventDate } from "@/lib/invitation/format";
 import type { InvitationViewData } from "@/lib/templates/types";
@@ -9,14 +10,13 @@ export function BeshikToi({ data }: { data: InvitationViewData }) {
       <div aria-hidden={true} className="text-3xl">🌙</div>
       <p className="text-sm tracking-[0.3em] text-amber-500 uppercase">{t("beshikLabel")}</p>
       {data.photoUrl && (
-        <div className="relative h-40 w-40 overflow-hidden rounded-full shadow-md">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={data.photoUrl}
-            alt={data.coupleNames}
-            className="h-full w-full object-cover"
-          />
-        </div>
+        <Image
+          src={data.photoUrl}
+          alt={data.coupleNames}
+          width={160}
+          height={160}
+          className="rounded-full object-cover shadow-md"
+        />
       )}
       <h1 className="font-serif text-4xl text-amber-900">{data.coupleNames}</h1>
       {data.message && <p className="text-amber-700">{data.message}</p>}
