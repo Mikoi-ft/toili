@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { upload } from "@vercel/blob/client";
 
 export function PhotoUpload({ value, onChange }: { value: string; onChange: (url: string) => void }) {
+  const t = useTranslations("editor");
   const [busy, setBusy] = useState(false);
   return (
     <div className="flex flex-col gap-2">
@@ -27,7 +29,7 @@ export function PhotoUpload({ value, onChange }: { value: string; onChange: (url
         }}
         className="rounded border p-2"
       />
-      {busy && <span className="text-sm text-gray-500">Загрузка…</span>}
+      {busy && <span className="text-sm text-gray-500">{t("uploading")}</span>}
       {value && <img src={value} alt="" className="h-20 w-20 rounded object-cover" />}
     </div>
   );
