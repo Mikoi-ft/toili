@@ -4,10 +4,12 @@ import { useState } from "react";
 import type { Locale } from "@/lib/i18n/locales";
 import { getTemplate } from "@/lib/templates/registry";
 import { createInvitationAction } from "@/app/actions/createInvitation";
+import { PhotoUpload } from "@/components/editor/PhotoUpload";
 
 export function InvitationEditor({ locale, templateId }: { locale: Locale; templateId: string }) {
   const entry = getTemplate(templateId);
   const Preview = entry?.Component;
+  const [photoUrl, setPhotoUrl] = useState("");
   const [f, setF] = useState({
     coupleNames: "",
     eventDate: "",
@@ -33,6 +35,8 @@ export function InvitationEditor({ locale, templateId }: { locale: Locale; templ
         <input name="venueAddress" value={f.venueAddress} onChange={set("venueAddress")} placeholder="Адрес" required className="rounded border p-3" />
         <input name="mapUrl" value={f.mapUrl} onChange={set("mapUrl")} placeholder="Ссылка 2ГИС (необязательно)" className="rounded border p-3" />
         <textarea name="message" value={f.message} onChange={set("message")} placeholder="Текст (необязательно)" className="rounded border p-3" />
+        <PhotoUpload value={photoUrl} onChange={setPhotoUrl} />
+        <input type="hidden" name="photoUrl" value={photoUrl} />
         <button type="submit" className="rounded-lg bg-black px-6 py-3 text-white">Создать</button>
       </form>
 
@@ -49,6 +53,7 @@ export function InvitationEditor({ locale, templateId }: { locale: Locale; templ
                 venueAddress: f.venueAddress || "Адрес",
                 mapUrl: f.mapUrl || undefined,
                 message: f.message || undefined,
+                photoUrl: photoUrl || undefined,
               }}
             />
           )}
