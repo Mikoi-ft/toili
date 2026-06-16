@@ -20,6 +20,7 @@ export default async function ManagePage({
   if (!invitation) notFound();
 
   const t = await getTranslations({ locale, namespace: "manage" });
+  const tShare = await getTranslations({ locale, namespace: "share" });
 
   const rsvps = await listRsvpByInvitationId(invitation.id);
   const inviteUrl = `/${locale}/i/${slug}`;
@@ -30,7 +31,7 @@ export default async function ManagePage({
       <p className="mb-6 text-gray-600">{t("subtitle")}</p>
       <a href={inviteUrl} className="mb-4 inline-block rounded-lg bg-black px-5 py-2 text-white">{t("open")}</a>
       <div className="mb-8">
-        <ShareButtons url={inviteUrl} text="Сиздерди тойго чакырабыз!" />
+        <ShareButtons url={inviteUrl} text={tShare("inviteText")} />
       </div>
       <h2 className="mb-3 text-xl font-semibold">{t("answers")}</h2>
       <RsvpSummary rsvps={rsvps} />

@@ -1,10 +1,12 @@
+import { useTranslations } from "next-intl";
 import { formatEventDate } from "@/lib/invitation/format";
 import type { InvitationViewData } from "@/lib/templates/types";
 
 export function ToiClassic({ data }: { data: InvitationViewData }) {
+  const t = useTranslations("templates");
   return (
     <article className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center gap-6 bg-gradient-to-b from-amber-50 to-rose-50 px-6 py-16 text-center">
-      <p className="text-sm tracking-[0.3em] text-amber-700 uppercase">Той</p>
+      <p className="text-sm tracking-[0.3em] text-amber-700 uppercase">{t("toiClassicLabel")}</p>
       {data.photoUrl && (
         <img
           src={data.photoUrl}
@@ -29,7 +31,7 @@ export function ToiClassic({ data }: { data: InvitationViewData }) {
           rel="noopener noreferrer"
           className="rounded-full bg-amber-700 px-6 py-2 text-white"
         >
-          Маршрут в 2ГИС
+          {t("route")}
         </a>
       )}
     </article>

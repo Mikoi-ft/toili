@@ -1,6 +1,19 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { NextIntlClientProvider } from "next-intl";
 import { NikeOrnament } from "@/components/templates/NikeOrnament";
+
+const messages = {
+  templates: {
+    toiClassicLabel: "Той",
+    nikeLabel: "Нике той",
+    birthdayLabel: "Туулган күн",
+    route: "Маршрут в 2ГИС",
+    kyzUzatuuLabel: "Кыз узатуу",
+    beshikLabel: "Бешик той",
+    jubileeLabel: "Юбилей",
+  },
+};
 
 const data = {
   locale: "ru" as const,
@@ -15,13 +28,21 @@ const data = {
 
 describe("NikeOrnament", () => {
   it("shows names, formatted date and venue", () => {
-    render(<NikeOrnament data={data} />);
+    render(
+      <NextIntlClientProvider locale="ru" messages={messages}>
+        <NikeOrnament data={data} />
+      </NextIntlClientProvider>
+    );
     expect(screen.getByText("Нурлан & Айдай")).toBeInTheDocument();
     expect(screen.getByText(/августа 2026/)).toBeInTheDocument();
     expect(screen.getByText("Той-хана Шанырак")).toBeInTheDocument();
   });
   it("links to the map", () => {
-    render(<NikeOrnament data={data} />);
+    render(
+      <NextIntlClientProvider locale="ru" messages={messages}>
+        <NikeOrnament data={data} />
+      </NextIntlClientProvider>
+    );
     expect(screen.getByRole("link")).toHaveAttribute("href", data.mapUrl);
   });
 });
