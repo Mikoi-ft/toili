@@ -48,11 +48,11 @@ export function InvitationEditor({ locale, templateId }: { locale: Locale; templ
             <Preview
               data={{
                 locale,
-                coupleNames: f.coupleNames || "Имена",
+                coupleNames: f.coupleNames || t("names"),
                 eventDate: f.eventDate || "2026-08-15",
                 eventTime: f.eventTime || "17:00",
-                venueName: f.venueName || "Место",
-                venueAddress: f.venueAddress || "Адрес",
+                venueName: f.venueName || t("venue"),
+                venueAddress: f.venueAddress || t("address"),
                 mapUrl: f.mapUrl || undefined,
                 message: f.message || undefined,
                 photoUrl: photoUrl || undefined,

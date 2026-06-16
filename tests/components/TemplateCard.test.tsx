@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { TemplateCard } from "@/components/gallery/TemplateCard";
 
 const messages = {
+  gallery: { premium: "Премиум" },
   templates: {
     toiClassicLabel: "Той",
     nikeLabel: "Нике той",

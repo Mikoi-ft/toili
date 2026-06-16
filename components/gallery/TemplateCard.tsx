@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import type { Locale } from "@/lib/i18n/locales";
 import type { TemplateMeta } from "@/lib/templates/types";
 import { getTemplate } from "@/lib/templates/registry";
@@ -14,6 +15,7 @@ const demo = (locale: Locale) => ({
 });
 
 export function TemplateCard({ meta, locale }: { meta: TemplateMeta; locale: Locale }) {
+  const t = useTranslations("gallery");
   const entry = getTemplate(meta.id);
   const Preview = entry?.Component;
   return (
@@ -32,7 +34,7 @@ export function TemplateCard({ meta, locale }: { meta: TemplateMeta; locale: Loc
         <span className="font-medium">{meta.name[locale]}</span>
         {meta.premium && (
           <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-700">
-            Премиум
+            {t("premium")}
           </span>
         )}
       </div>
