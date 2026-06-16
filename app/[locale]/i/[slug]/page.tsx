@@ -3,6 +3,7 @@ import { getInvitationBySlug } from "@/lib/invitation/repository";
 import { getTemplate } from "@/lib/templates/registry";
 import { ToiClassic } from "@/components/templates/ToiClassic";
 import { isValidLocale } from "@/lib/i18n/locales";
+import { RsvpForm } from "@/components/rsvp/RsvpForm";
 
 export default async function InvitationPage({
   params,
@@ -30,5 +31,13 @@ export default async function InvitationPage({
   const entry = getTemplate(invitation.templateId);
   const TemplateComponent = entry?.Component ?? ToiClassic;
 
-  return <TemplateComponent data={data} />;
+  return (
+    <>
+      <TemplateComponent data={data} />
+      <section className="mx-auto max-w-md px-6 py-10">
+        <h2 className="mb-4 text-center text-xl font-semibold">Подтвердите участие</h2>
+        <RsvpForm slug={slug} locale={locale} />
+      </section>
+    </>
+  );
 }
