@@ -1,6 +1,8 @@
 import type { ComponentType } from "react";
 import type { InvitationViewData, TemplateCategory, TemplateMeta } from "@/lib/templates/types";
 import { ToiClassic } from "@/components/templates/ToiClassic";
+import { NikeOrnament } from "@/components/templates/NikeOrnament";
+import { BirthdayModern } from "@/components/templates/BirthdayModern";
 
 type TemplateEntry = {
   meta: TemplateMeta;
@@ -16,6 +18,24 @@ const registry: Record<string, TemplateEntry> = {
       premium: false,
     },
     Component: ToiClassic,
+  },
+  "nike-ornament": {
+    meta: {
+      id: "nike-ornament",
+      name: { ky: "Нике той", ru: "Нике той", kk: "Нике той" },
+      category: "kg-ceremony",
+      premium: true,
+    },
+    Component: NikeOrnament,
+  },
+  "birthday-modern": {
+    meta: {
+      id: "birthday-modern",
+      name: { ky: "Туулган күн", ru: "День рождения", kk: "Туған күн" },
+      category: "universal",
+      premium: false,
+    },
+    Component: BirthdayModern,
   },
 };
 
