@@ -3,6 +3,9 @@ import type { InvitationViewData, TemplateCategory, TemplateMeta } from "@/lib/t
 import { ToiClassic } from "@/components/templates/ToiClassic";
 import { NikeOrnament } from "@/components/templates/NikeOrnament";
 import { BirthdayModern } from "@/components/templates/BirthdayModern";
+import { KyzUzatuu } from "@/components/templates/KyzUzatuu";
+import { BeshikToi } from "@/components/templates/BeshikToi";
+import { Jubilee } from "@/components/templates/Jubilee";
 
 type TemplateEntry = {
   meta: TemplateMeta;
@@ -36,6 +39,33 @@ const registry: Record<string, TemplateEntry> = {
       premium: false,
     },
     Component: BirthdayModern,
+  },
+  "kyz-uzatuu": {
+    meta: {
+      id: "kyz-uzatuu",
+      name: { ky: "Кыз узатуу", ru: "Кыз узатуу", kk: "Қыз ұзату" },
+      category: "kg-ceremony",
+      premium: false,
+    },
+    Component: KyzUzatuu,
+  },
+  "beshik-toi": {
+    meta: {
+      id: "beshik-toi",
+      name: { ky: "Бешик той", ru: "Бешик той", kk: "Бесік той" },
+      category: "kg-ceremony",
+      premium: false,
+    },
+    Component: BeshikToi,
+  },
+  "jubilee": {
+    meta: {
+      id: "jubilee",
+      name: { ky: "Юбилей", ru: "Юбилей", kk: "Мерейтой" },
+      category: "universal",
+      premium: false,
+    },
+    Component: Jubilee,
   },
 };
 
