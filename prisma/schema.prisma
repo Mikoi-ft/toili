@@ -31,4 +31,17 @@ model Invitation {
   message      String?
   photoUrl     String?
   createdAt    DateTime @default(now())
+  manageKey    String   @unique
+  rsvps        Rsvp[]
+}
+
+model Rsvp {
+  id           String     @id @default(uuid())
+  invitationId String
+  invitation   Invitation @relation(fields: [invitationId], references: [id], onDelete: Cascade)
+  name         String
+  attending    Boolean
+  guests       Int        @default(1)
+  message      String?
+  createdAt    DateTime   @default(now())
 }
