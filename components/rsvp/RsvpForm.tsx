@@ -5,6 +5,7 @@ import { submitRsvpAction } from "@/app/actions/submitRsvp";
 
 export function RsvpForm({ slug, locale }: { slug: string; locale: string }) {
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
   const action = submitRsvpAction.bind(null, slug, locale);
 
   if (sent) {
@@ -14,11 +15,21 @@ export function RsvpForm({ slug, locale }: { slug: string; locale: string }) {
   return (
     <form
       action={async (fd) => {
-        await action(fd);
-        setSent(true);
+        setError(false);
+        try {
+          await action(fd);
+          setSent(true);
+        } catch {
+          setError(true);
+        }
       }}
       className="mx-auto flex w-full max-w-sm flex-col gap-3"
     >
+      {error && (
+        <p className="rounded-lg bg-red-50 p-3 text-center text-red-600">
+          Не удалось отправить. Попробуйте ещё раз.
+        </p>
+      )}
       <input name="name" placeholder="Ваше имя" required className="rounded border p-3" />
       <div className="flex gap-2">
         <label className="flex flex-1 items-center justify-center gap-2 rounded border p-3">
